@@ -34,6 +34,7 @@ TitleCase(Text,lang="en",ini="TitleCase.ini")
 		 settings[A_LoopField]:=key
 	 	}
 	 StringLower, Text, Text, T
+	 Text:=RegExReplace(Text,"m)-([a-z])","-$U{1}") ; Capitalize second part of hyphenated words
 	 Text:=TitleCase_LowerCaseList(Text,settings.LowerCaseList)
 	 Text:=TitleCase_UpperCaseList(Text,settings.UpperCaseList)
 	 Text:=TitleCase_MixedCaseList(Text,settings.MixedCaseList)
